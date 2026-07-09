@@ -968,13 +968,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // ================================================================
   const EMAILJS_PUBLIC_KEY  = "qRBryErY3jpIZQthO";
   const EMAILJS_SERVICE_ID  = "service_n40ybhn";
-  const EMAILJS_TEMPLATE_ID = "template_om701uf";
+  const EMAILJS_TEMPLATE_ID_INSCRICAO = "template_om701uf"; // formulário "Garanta sua vaga" (com curso)
+  const EMAILJS_TEMPLATE_ID_CONTATO   = "template_qcpceak"; // formulário "Contato" (sem curso)
 
   if (window.emailjs) {
     emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
   }
 
-  function bindEmailForm(selector) {
+  function bindEmailForm(selector, templateId) {
     const form = document.querySelector(selector);
     if (!form) return;
     form.addEventListener('submit', (e) => {
@@ -985,7 +986,7 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled = true;
       submitBtn.textContent = 'Enviando...';
 
-      emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
+      emailjs.sendForm(EMAILJS_SERVICE_ID, templateId, form)
         .then(() => {
           if (success) {
             success.classList.add('show');
@@ -1004,8 +1005,8 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  bindEmailForm('#contact-form');  // formulário da seção "Garanta sua vaga" (inscrição)
-  bindEmailForm('#contato-form');  // formulário da seção "Contato"
+  bindEmailForm('#contact-form', EMAILJS_TEMPLATE_ID_INSCRICAO);  // formulário da seção "Garanta sua vaga" (inscrição)
+  bindEmailForm('#contato-form', EMAILJS_TEMPLATE_ID_CONTATO);    // formulário da seção "Contato"
 
   // Sombra no header ao rolar
   const header = document.querySelector('.site-header');
