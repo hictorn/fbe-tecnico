@@ -357,7 +357,7 @@ section{ padding: 84px 0; }
       <a href="#faq">Dúvidas Frequentes</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a href="#inscricao" class="btn btn-primary header-cta" onclick="gtag('event', 'clique_inscreva_se_header')">Inscreva-se</a>
+    <a href="#inscricao" class="btn btn-primary header-cta" data-ga="clique_inscreva_se_header">Inscreva-se</a>
     <button class="nav-toggle" aria-label="Abrir menu">☰</button>
   </div>
 </header>
@@ -372,7 +372,7 @@ section{ padding: 84px 0; }
       <h1>Mais de <mark>120 mil</mark> profissionais qualificados e/ou requalificados nos&nbsp;últimos 20 anos.</h1>
       <p class="lead">A FBE forma profissionais para o mercado industrial com cursos técnicos em Eletrotécnica e Eletromecânica, aliando teoria, prática e estágio&nbsp;supervisionado.</p>
       <div class="hero-cta-row">
-        <a href="#cursos" class="btn btn-primary" onclick="gtag('event', 'clique_conheca_cursos')">Conheça os cursos</a>
+        <a href="#cursos" class="btn btn-primary" data-ga="clique_conheca_cursos">Conheça os cursos</a>
         <a href="https://wa.me/557141010266" target="_blank" class="btn btn-outline" onclick="gtag('event', 'clique_whatsapp', {'origem': 'banner'})">Falar no WhatsApp</a>
       </div>
       <div class="hero-stats">
@@ -415,7 +415,7 @@ section{ padding: 84px 0; }
           <span>⏱ 1.600h totais</span>
           <span>📅 13 meses</span>
         </div>
-        <a href="#detalhes-cursos" class="btn btn-dark-outline js-open-tab" data-tab="eletrotecnica" onclick="gtag('event', 'clique_ver_matriz', {'curso': 'Eletrotécnica'})">Ver matriz e investimento</a>
+        <a href="#detalhes-cursos" class="btn btn-dark-outline js-open-tab" data-tab="eletrotecnica" data-ga="clique_ver_matriz" data-ga-curso="Eletrotécnica">Ver matriz e investimento</a>
       </div>
 
       <div class="course-card">
@@ -426,7 +426,7 @@ section{ padding: 84px 0; }
           <span>⏱ 1.600h totais</span>
           <span>📅 13 meses</span>
         </div>
-        <a href="#detalhes-cursos" class="btn btn-dark-outline js-open-tab" data-tab="eletromecanica" onclick="gtag('event', 'clique_ver_matriz', {'curso': 'Eletromecânica'})">Ver matriz e investimento</a>
+        <a href="#detalhes-cursos" class="btn btn-dark-outline js-open-tab" data-tab="eletromecanica" data-ga="clique_ver_matriz" data-ga-curso="Eletromecânica">Ver matriz e investimento</a>
       </div>
     </div>
   </div>
@@ -552,7 +552,7 @@ section{ padding: 84px 0; }
             <li>Valor de contrato: R$ 672,40</li>
             <li>12x de R$ 399,00 no boleto bancário<br>(vencimento dia 05)</li>
           </ul>
-          <a href="#inscricao" class="btn btn-primary" style="margin-top:20px" onclick="gtag('event', 'clique_matricule_se')">Matricule-se</a>
+          <a href="#inscricao" class="btn btn-primary" style="margin-top:20px" data-ga="clique_matricule_se">Matricule-se</a>
         </div>
       </div>
     </div>
@@ -632,7 +632,7 @@ section{ padding: 84px 0; }
             <li>Valor de contrato: R$ 672,40</li>
             <li>12x de R$ 399,00 no boleto bancário<br>(vencimento dia 05)</li>
           </ul>
-          <a href="#inscricao" class="btn btn-primary" style="margin-top:20px" onclick="gtag('event', 'clique_matricule_se')">Matricule-se</a>
+          <a href="#inscricao" class="btn btn-primary" style="margin-top:20px" data-ga="clique_matricule_se">Matricule-se</a>
         </div>
       </div>
     </div>
@@ -978,6 +978,19 @@ document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => openTab(btn.dataset.tab));
   });
+  // GA events para links internos (dispara antes de rolar)
+  document.querySelectorAll('[data-ga]').forEach(el => {
+    el.addEventListener('click', () => {
+      const eventName = el.dataset.ga;
+      const curso = el.dataset.gaCurso;
+      if (curso) {
+        gtag('event', eventName, {'curso': curso});
+      } else {
+        gtag('event', eventName);
+      }
+    });
+  });
+
   document.querySelectorAll('.js-open-tab').forEach(link => {
     link.addEventListener('click', () => openTab(link.dataset.tab));
   });
