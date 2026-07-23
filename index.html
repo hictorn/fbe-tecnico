@@ -2,6 +2,14 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZC91PTS4SL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-ZC91PTS4SL');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FBE Técnico | Cursos Técnicos em Eletrotécnica e Eletromecânica — Salvador, BA</title>
 <meta name="description" content="Cursos técnicos em Eletrotécnica e Eletromecânica na FBE Técnico, em Salvador-BA. Mais de 120 mil profissionais qualificados nos últimos 20 anos. Matrículas abertas.">
@@ -349,7 +357,7 @@ section{ padding: 84px 0; }
       <a href="#faq">Dúvidas Frequentes</a>
       <a href="#contato">Contato</a>
     </nav>
-    <a href="#inscricao" class="btn btn-primary header-cta">Inscreva-se</a>
+    <a href="#inscricao" class="btn btn-primary header-cta" onclick="gtag('event', 'clique_inscreva_se_header')">Inscreva-se</a>
     <button class="nav-toggle" aria-label="Abrir menu">☰</button>
   </div>
 </header>
@@ -364,8 +372,8 @@ section{ padding: 84px 0; }
       <h1>Mais de <mark>120 mil</mark> profissionais qualificados e/ou requalificados nos&nbsp;últimos 20 anos.</h1>
       <p class="lead">A FBE forma profissionais para o mercado industrial com cursos técnicos em Eletrotécnica e Eletromecânica, aliando teoria, prática e estágio&nbsp;supervisionado.</p>
       <div class="hero-cta-row">
-        <a href="#cursos" class="btn btn-primary">Conheça os cursos</a>
-        <a href="https://wa.me/557141010266" target="_blank" class="btn btn-outline">Falar no WhatsApp</a>
+        <a href="#cursos" class="btn btn-primary" onclick="gtag('event', 'clique_conheca_cursos')">Conheça os cursos</a>
+        <a href="https://wa.me/557141010266" target="_blank" class="btn btn-outline" onclick="gtag('event', 'clique_whatsapp', {'origem': 'banner'})">Falar no WhatsApp</a>
       </div>
       <div class="hero-stats">
         <div class="hero-stat">
@@ -407,7 +415,7 @@ section{ padding: 84px 0; }
           <span>⏱ 1.600h totais</span>
           <span>📅 13 meses</span>
         </div>
-        <a href="#detalhes-cursos" class="btn btn-dark-outline js-open-tab" data-tab="eletrotecnica">Ver matriz e investimento</a>
+        <a href="#detalhes-cursos" class="btn btn-dark-outline js-open-tab" data-tab="eletrotecnica" onclick="gtag('event', 'clique_ver_matriz', {'curso': 'Eletrotécnica'})">Ver matriz e investimento</a>
       </div>
 
       <div class="course-card">
@@ -418,7 +426,7 @@ section{ padding: 84px 0; }
           <span>⏱ 1.600h totais</span>
           <span>📅 13 meses</span>
         </div>
-        <a href="#detalhes-cursos" class="btn btn-dark-outline js-open-tab" data-tab="eletromecanica">Ver matriz e investimento</a>
+        <a href="#detalhes-cursos" class="btn btn-dark-outline js-open-tab" data-tab="eletromecanica" onclick="gtag('event', 'clique_ver_matriz', {'curso': 'Eletromecânica'})">Ver matriz e investimento</a>
       </div>
     </div>
   </div>
@@ -544,7 +552,7 @@ section{ padding: 84px 0; }
             <li>Valor de contrato: R$ 672,40</li>
             <li>12x de R$ 399,00 no boleto bancário<br>(vencimento dia 05)</li>
           </ul>
-          <a href="#inscricao" class="btn btn-primary" style="margin-top:20px">Matricule-se</a>
+          <a href="#inscricao" class="btn btn-primary" style="margin-top:20px" onclick="gtag('event', 'clique_matricule_se')">Matricule-se</a>
         </div>
       </div>
     </div>
@@ -624,7 +632,7 @@ section{ padding: 84px 0; }
             <li>Valor de contrato: R$ 672,40</li>
             <li>12x de R$ 399,00 no boleto bancário<br>(vencimento dia 05)</li>
           </ul>
-          <a href="#inscricao" class="btn btn-primary" style="margin-top:20px">Matricule-se</a>
+          <a href="#inscricao" class="btn btn-primary" style="margin-top:20px" onclick="gtag('event', 'clique_matricule_se')">Matricule-se</a>
         </div>
       </div>
     </div>
@@ -691,7 +699,7 @@ section{ padding: 84px 0; }
     <div class="whatsapp-cta">
       <h2>Entre em contato conosco pelo WhatsApp</h2>
       <p>Para falar com a Central de Atendimento via WhatsApp, clique no botão abaixo:</p>
-      <a href="https://wa.me/557141010266" target="_blank" class="btn btn-whatsapp">
+      <a href="https://wa.me/557141010266" target="_blank" class="btn btn-whatsapp" onclick="gtag('event', 'clique_whatsapp', {'origem': 'banner_whatsapp'})">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="#fff" xmlns="http://www.w3.org/2000/svg">
           <path d="M12.002 2C6.478 2 2 6.477 2 12c0 1.75.457 3.464 1.325 4.984L2 22l5.184-1.36A9.945 9.945 0 0 0 12.002 22C17.522 22 22 17.523 22 12S17.522 2 12.002 2zm0 18.06c-1.63 0-3.223-.44-4.616-1.27l-.331-.196-3.076.807.82-3.001-.216-.34A8.048 8.048 0 0 1 3.94 12c0-4.44 3.618-8.06 8.062-8.06 4.442 0 8.06 3.62 8.06 8.06 0 4.44-3.618 8.06-8.06 8.06z"/>
   <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -821,7 +829,7 @@ section{ padding: 84px 0; }
         <img src="data:image/png;base64,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" alt="FBE Técnico" style="height:48px;width:auto;margin-bottom:14px">
         <p style="font-size:14px;max-width:260px">Cursos técnicos com aplicação prática, formando profissionais em Salvador há mais de 20 anos.</p>
         <div class="footer-social">
-          <a href="https://wa.me/557141010266" target="_blank" aria-label="WhatsApp">
+          <a href="https://wa.me/557141010266" target="_blank" aria-label="WhatsApp" onclick="gtag('event', 'clique_whatsapp', {'origem': 'rodape'})">
             <svg viewBox="0 0 24 24" width="18" height="18" fill="#fff" xmlns="http://www.w3.org/2000/svg">
               <path d="M12.002 2C6.478 2 2 6.477 2 12c0 1.75.457 3.464 1.325 4.984L2 22l5.184-1.36A9.945 9.945 0 0 0 12.002 22C17.522 22 22 17.523 22 12S17.522 2 12.002 2zm0 18.06c-1.63 0-3.223-.44-4.616-1.27l-.331-.196-3.076.807.82-3.001-.216-.34A8.048 8.048 0 0 1 3.94 12c0-4.44 3.618-8.06 8.062-8.06 4.442 0 8.06 3.62 8.06 8.06 0 4.44-3.618 8.06-8.06 8.06z"/>
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -868,7 +876,7 @@ section{ padding: 84px 0; }
   </div>
 </footer>
 
-<a href="https://wa.me/557141010266" target="_blank" class="wa-float" aria-label="WhatsApp">
+<a href="https://wa.me/557141010266" target="_blank" class="wa-float" aria-label="WhatsApp" onclick="gtag('event', 'clique_whatsapp', {'origem': 'botao_flutuante'})">
   <svg viewBox="0 0 24 24" width="28" height="28" fill="#fff" xmlns="http://www.w3.org/2000/svg">
     <path d="M12.002 2C6.478 2 2 6.477 2 12c0 1.75.457 3.464 1.325 4.984L2 22l5.184-1.36A9.945 9.945 0 0 0 12.002 22C17.522 22 22 17.523 22 12S17.522 2 12.002 2zm0 18.06c-1.63 0-3.223-.44-4.616-1.27l-.331-.196-3.076.807.82-3.001-.216-.34A8.048 8.048 0 0 1 3.94 12c0-4.44 3.618-8.06 8.062-8.06 4.442 0 8.06 3.62 8.06 8.06 0 4.44-3.618 8.06-8.06 8.06z"/>
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
@@ -1008,6 +1016,12 @@ document.addEventListener('DOMContentLoaded', () => {
             success.classList.add('show');
             form.reset();
             success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            // GA event
+            if (selector === '#contact-form') {
+              gtag('event', 'envio_formulario_inscricao', {'formulario': 'inscricao_tecnico'});
+            } else {
+              gtag('event', 'envio_formulario_contato', {'formulario': 'contato_tecnico'});
+            }
           }
         })
         .catch((err) => {
